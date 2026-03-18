@@ -44,34 +44,9 @@ export default function Home() {
         }}>
 {`{
   "mcpServers": {
-    "humand-local": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "${localUrl}?apiKey=TU_API_KEY"]
-    },
-    "humand-prod": {
+    "humand-connect": {
       "command": "npx",
       "args": ["-y", "mcp-remote", "${deployUrl}?apiKey=TU_API_KEY"]
-    }
-  }
-}`}
-        </pre>
-
-        <h3>Opción 2: Conexión directa (solo producción)</h3>
-        <pre style={{ 
-          background: '#1e1e1e', 
-          color: '#d4d4d4', 
-          padding: '1rem', 
-          borderRadius: '4px',
-          overflow: 'auto',
-          fontSize: '0.875rem'
-        }}>
-{`{
-  "mcpServers": {
-    "humand": {
-      "url": "${deployUrl}",
-      "headers": {
-        "X-API-Key": "TU_API_KEY"
-      }
     }
   }
 }`}
@@ -94,7 +69,7 @@ export default function Home() {
     "humand-local": {
       "url": "${localUrl}?apiKey=TU_API_KEY"
     },
-    "humand-prod": {
+    "humand-connect": {
       "url": "${deployUrl}?apiKey=TU_API_KEY"
     }
   }
