@@ -24,7 +24,6 @@ cp .env.example .env
 
 2. Configura tu API key en el archivo `.env`:
 ```
-API_KEY=tu_api_key_aqui
 REDASH_API_KEY=tu_redash_api_key_aqui
 REDASH_URL=https://redash-dev.humand.co
 HUMAND_API_BASE_URL=https://api.dev.humand.co/public/api/v1

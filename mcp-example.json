@@ -2,7 +2,9 @@
   "mcpServers": {
     "humand-mcp": {
       "command": "node",
-      "args": ["/Users/pablo.bacchetta/hu/humand-connect/humand-mcp-server/dist/index.js"],
+      "args": [
+        "/Users/pablo.bacchetta/hu/humand-connect/humand-mcp-server/dist/index.js"
+      ],
       "env": {
         "API_KEY": "MzA4Njg3OnRxMjhLQnlKWTBTZk80U2o1MDIzR0VtU3dQTW93STVZ",
         "HUMAND_API_BASE_URL": "https://api.dev.humand.co/public/api/v1"
@@ -10,7 +12,10 @@
     },
     "redash-mcp": {
       "command": "npx",
-      "args": ["-y", "@suthio/redash-mcp"],
+      "args": [
+        "-y",
+        "@suthio/redash-mcp"
+      ],
       "env": {
         "REDASH_API_KEY": "veifoekTCx1IUusXkGiniGwGRsQA2SdHV6tUiUsZ",
         "REDASH_URL": "https://redash-dev.humand.co"

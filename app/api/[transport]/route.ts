@@ -130,12 +130,10 @@ const handler = createMcpHandler(
       },
       async ({ apiKey, baseUrl }) => {
         setConnectionConfig({ apiKey, baseUrl });
-        const config = getCurrentConfig();
         return {
           content: [{ type: 'text' as const, text: JSON.stringify({ 
             message: 'Conexión configurada correctamente',
-            apiKey: config.apiKey ? '[CONFIGURADA]' : '[NO CONFIGURADA]',
-            baseUrl: config.baseUrl || '[NO CONFIGURADA]'
+            connected: true,
           }, null, 2) }],
         };
       }
@@ -152,8 +150,10 @@ const handler = createMcpHandler(
         const config = getCurrentConfig();
         return {
           content: [{ type: 'text' as const, text: JSON.stringify({
-            apiKeyConfigured: !!config.apiKey,
-            baseUrl: config.baseUrl || '[NO CONFIGURADA]',
+            connected: !!config.apiKey && !!config.baseUrl,
+            message: !!config.apiKey && !!config.baseUrl 
+              ? 'Conexión activa' 
+              : 'Revisar configuración',
           }, null, 2) }],
         };
       }
