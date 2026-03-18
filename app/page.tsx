@@ -13,21 +13,6 @@ export default function Home() {
     }}>
       <h1>Humand Connect MCP Server</h1>
       
-      <section style={{ marginTop: '2rem' }}>
-        <h2>URLs de Conexión</h2>
-        <div style={{ marginBottom: '1rem' }}>
-          <strong>Local:</strong>
-          <code style={{ display: 'block', padding: '0.5rem', background: '#f4f4f4', borderRadius: '4px', marginTop: '0.25rem' }}>
-            {localUrl}?apiKey={apiKeyPlaceholder}
-          </code>
-        </div>
-        <div>
-          <strong>Producción:</strong>
-          <code style={{ display: 'block', padding: '0.5rem', background: '#f4f4f4', borderRadius: '4px', marginTop: '0.25rem' }}>
-            {deployUrl}?apiKey={apiKeyPlaceholder}
-          </code>
-        </div>
-      </section>
 
       <section style={{ marginTop: '2rem' }}>
         <h2>Configuración Claude Desktop</h2>
