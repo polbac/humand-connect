@@ -127,6 +127,21 @@ export class ApiService {
 
     return response.json();
   }
+
+  async putRaw(endpoint: string, data?: unknown): Promise<string> {
+    const response = await fetch(`${this.baseUrl}${endpoint}`, {
+      method: 'PUT',
+      headers: this.getHeaders(),
+      body: data ? JSON.stringify(data) : undefined,
+    });
+
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(buildErrorMessage(response.status, endpoint, 'PUT', error.message));
+    }
+
+    return response.text();
+  }
 }
 
 export const apiService = new ApiService();

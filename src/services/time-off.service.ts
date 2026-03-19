@@ -28,11 +28,19 @@ export class TimeOffService {
     });
   }
 
-  async updateRequestState(requestId: number, state: 'APPROVED' | 'REJECTED', comment?: string): Promise<TimeOffRequest> {
-    return apiService.put<TimeOffRequest>(`/time-off/requests/${requestId}/state`, {
+  async updateRequestState(requestId: number, state: 'APPROVED' | 'REJECTED', comment?: string): Promise<{ success: boolean } | TimeOffRequest> {
+    const text = await apiService.putRaw(`/time-off/requests/${requestId}/state`, {
       state,
       comment,
     });
+    if (!text) {
+      return { success: true };
+    }
+    try {
+      return JSON.parse(text) as TimeOffRequest;
+    } catch {
+      return { success: true };
+    }
   }
 }
 
